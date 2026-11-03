@@ -1,0 +1,16 @@
+# Sobe o PostgreSQL 16 usado pelo RuralMed:  docker compose up -d
+services:
+  postgres:
+    image: postgres:16
+    container_name: ruralmed-postgres
+    environment:
+      POSTGRES_DB: ruralmed
+      POSTGRES_USER: ruralmed
+      POSTGRES_PASSWORD: ruralmed
+    ports:
+      - "5432:5432"
+    volumes:
+      - ruralmed-data:/var/lib/postgresql/data
+
+volumes:
+  ruralmed-data:
